@@ -4,7 +4,7 @@ import Header from "./components/header";
 import useTractors from "./hooks/useTractors";
 
 function App() {
-  const { isLoading, tractors, users } = useTractors();
+  const { isLoading, tractors, users, locales } = useTractors();
 
   return isLoading ? (
     <>
