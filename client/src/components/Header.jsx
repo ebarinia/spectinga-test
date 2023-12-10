@@ -3,9 +3,21 @@ import React from 'react'
 const Header = ( {users} ) => {
 
   return (
-    <div className='bg-slate-400'>
-        <h1 className='flex mx-auto w-1/2'>Welcome {users[0].firstName}</h1>
-        <img src="https://spectinga.com/assets/spectinga-white-6kLmPpoN.svg" alt="" />
+
+    <div className="flex justify-between ml-[25%] mr-[25%] pt-10 pb-10">
+        <img
+            className="max-h-6"
+            src="https://spectinga.com/assets/spectinga-white-6kLmPpoN.svg"
+            alt=""
+          />
+        <div className="flex">
+            <h1 className="text-white pr-5">{users[0].firstName}</h1>
+            <img
+              className="max-h-5 rounded-full object-cover"
+              src="https://upload.wikimedia.org/wikipedia/commons/6/62/Flag_of_France.png"
+              alt=""
+            />
+        </div>
     </div>
   )
 }

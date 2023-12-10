@@ -16,7 +16,7 @@ async function main() {
         data: {
             name: 'New Holland T7.225',
             img: "https://www.swinnertonmachinery.co.uk/wp-content/uploads/2019/02/IMG_5885-scaled.jpeg",
-            collection: 'available',
+            collection: 'Available',
             year: 2022,
             location: 'UK',
             speed: '50 kph',
