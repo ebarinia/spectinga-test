@@ -1,4 +1,4 @@
-## NestJS + PostgreSQL backend
+## NestJS, Prisma & PostgreSQL backend
 
 This is a simple backend API for the Spectinga tech test.
 
