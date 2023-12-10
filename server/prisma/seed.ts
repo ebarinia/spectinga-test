@@ -15,6 +15,7 @@ async function main() {
     const tractor1 = await prisma.tractor.create({
         data: {
             name: 'New Holland T7.225',
+            price: 95000,
             img: "https://www.swinnertonmachinery.co.uk/wp-content/uploads/2019/02/IMG_5885-scaled.jpeg",
             collection: 'Available',
             year: 2022,
