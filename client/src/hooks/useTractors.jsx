@@ -6,6 +6,7 @@ const useTractors = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [tractors, setTractors] = useState(null);
     const [users, setUsers] = useState(null);
+    const [shipping, setShipping] = useState(null);
 
     useEffect(() => {
         const request = new Request

@@ -4,7 +4,7 @@ const Header = ( {users} ) => {
 
   return (
 
-    <div className="flex justify-between ml-[25%] mr-[25%] pt-10 pb-10">
+    <div className="flex justify-between ml-[25%] mr-[25%] pt-10 pb-6">
         <img
             className="max-h-6"
             src="https://spectinga.com/assets/spectinga-white-6kLmPpoN.svg"
