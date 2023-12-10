@@ -18,3 +18,29 @@ model User {
   shipping Boolean
   createdAt DateTime @default(now())
 }
+
+model Tractor {
+  name String
+  id Int @id @default(autoincrement())
+  img String
+  collection String
+  year Int
+  location String
+  speed String
+  gearbox String
+  engine Int
+  airBrakes Boolean @default(false)
+  frontLinkage Boolean @default(false)
+  frontPTO Boolean @default(false)
+  cabSuspension Boolean @default(false)
+  frontSuspension Boolean @default(false)
+  rearRemoteType String
+  numOfRearRemote Int
+  frontTyreSize String
+  rearTyreSize String
+  midAmountValves Boolean @default(false)
+  gps String
+  pumpSize String
+  frontLoader Boolean @default(false)
+  createdAt DateTime @default(now())
+}
