@@ -20,8 +20,8 @@ model User {
 }
 
 model Tractor {
-  name String
   id Int @id @default(autoincrement())
+  name String
   img String
   collection String
   year Int
