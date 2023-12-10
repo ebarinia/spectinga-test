@@ -14,7 +14,8 @@ model User {
   id Int @id @default(autoincrement())
   firstName String
   lastName String
-  locale String
+  localeId Int
+  locale Locale @relation(fields: [localeId], references: [id])
   shipping Boolean
   createdAt DateTime @default(now())
 }
@@ -44,4 +45,11 @@ model Tractor {
   pumpSize String
   frontLoader Boolean @default(false)
   createdAt DateTime @default(now())
+}
+
+model Locale {
+  id Int @id @default(autoincrement())
+  name String
+  shipping Int
+  users User[]
 }
