@@ -4,7 +4,7 @@ import Header from "./components/header";
 import useTractors from "./hooks/useTractors";
 
 function App() {
-  const { isLoading, tractors, users, locales } = useTractors();
+  const { isLoading, tractors, users, shipping } = useTractors();
 
   return isLoading ? (
     <>
@@ -19,7 +19,7 @@ function App() {
           style={{ gridTemplateColumns: "65% 35%" }}
         >
           <Details tractors={tractors} />
-          <Pricing tractors={tractors} users={users}/>
+          <Pricing tractors={tractors} users={users} shipping={shipping}/>
         </div>
       </div>
     </>
