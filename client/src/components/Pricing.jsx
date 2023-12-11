@@ -1,4 +1,6 @@
 import React from "react";
+import BuyModal from "./BuyModal";
+import ShippingModal from "./ShippingModal";
 
 const Pricing = ( {users, tractors}) => {
   return (
@@ -11,16 +13,14 @@ const Pricing = ( {users, tractors}) => {
       <button className="bg-[#2c42ec] hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5 block w-full mx-auto">
         Contact sales
       </button>
-      <button className="border border-black font-bold py-2 px-4 rounded mt-3 block w-full mx-auto">
-        Buy now
-      </button>
+      <BuyModal/>
       <div className="flex justify-between text-sm mt-5">
         <span className="font-semibold">Delivery to your yard</span>
         <span>£500</span>
       </div>
       <div className="flex justify-between text-sm mt-1">
         <span className="text-xs text-left text-gray-600">Anywhere in your country</span>
-        <a>Change</a>
+        <ShippingModal/>
       </div>
 
     </div>
