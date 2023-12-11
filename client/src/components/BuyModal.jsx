@@ -58,9 +58,9 @@ function BuyModal({ tractors, shipping, users }) {
             </Stack>
             </RadioGroup>
             </div>
-            <div>
-                <span>Total</span>
-                <span>£{totalCost.toLocaleString()}</span>
+            <div className="flex justify-between font-bold pt-2">
+                <span>Total: </span>
+                <span className="text-bold text-2xl">£{totalCost.toLocaleString()}</span>
             </div>
           </ModalBody>
           <ModalFooter>
