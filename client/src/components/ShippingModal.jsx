@@ -23,7 +23,7 @@ function ShippingModal({ users, shipping, delivery, onSetDelivery }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = `http://localhost:3000/users/${users[0].id}`;
-    const payload = { delivery: delivery === "true" };
+    const payload = { shipping: delivery === "true" };
 
     request.patch(url, payload)
       .then(() => {})
