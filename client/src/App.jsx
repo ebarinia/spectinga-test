@@ -13,9 +13,9 @@ function App() {
   ) : (
     <>
       <div className="bg-[#2c42ec] h-80">
-        <Header users={users} />
+          <Header users={users} />
         <div
-          className="ml-[25%] mr-[25%] pt-10 grid grid-cols-2 gap-2"
+          className="ml-[25%] mr-[25%] pt-10 grid grid-cols-2 gap-10"
           style={{ gridTemplateColumns: "65% 35%" }}
         >
           <Details tractors={tractors} />

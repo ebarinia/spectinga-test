@@ -6,7 +6,7 @@ const Details = ({ tractors }) => {
       <h1 className="font-bold text-4xl text-white pb-10">
         {tractors[0].name}
       </h1>
-      <img className="max-h-96 rounded-xl" src={tractors[0].img} alt="" />
+      <img className="rounded-xl" src={tractors[0].img} alt="image of a truck" />
 
       <p className="text-lg font-bold pt-10 pb-5">Details</p>
       <p className="border-b border-gray-300 py-2 flex justify-between">
