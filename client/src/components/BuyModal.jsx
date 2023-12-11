@@ -16,7 +16,7 @@ import {
 
 function BuyModal({ tractors, shipping, users }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [value, setValue] = useState("false");
+  const [value, setValue] = useState(users[0].shipping);
 
   const totalCost =
     value === "true"
@@ -54,7 +54,7 @@ function BuyModal({ tractors, shipping, users }) {
                 value={value}
               >
                 <Stack>
-                  <Radio value="true" colorScheme="blue">
+                  <Radio value={true} colorScheme="blue">
                     <div className="text-sm flex justify-between">
                       <p>
                         Delivery to your yard:{" "}
@@ -64,7 +64,7 @@ function BuyModal({ tractors, shipping, users }) {
                       </p>
                     </div>
                   </Radio>
-                  <Radio value="false" colorScheme="blue">
+                  <Radio value={false} colorScheme="blue">
                     <p className="text-sm">
                       Own transportation:{" "}
                       <span className="font-semibold">Free</span>

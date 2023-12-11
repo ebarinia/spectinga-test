@@ -1,12 +1,26 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { UsersService } from './users.service';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from "@nestjs/common";
+import { UsersService } from "./users.service";
+import { UpdateUserDto } from "./dto/update-user.dto";
 
-@Controller('users')
+@Controller("users")
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
   findAll() {
     return this.usersService.findAll();
+  }
+
+  @Patch(":id")
+  update(@Param("id") id: string, @Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.update(+id, updateUserDto);
   }
 }
