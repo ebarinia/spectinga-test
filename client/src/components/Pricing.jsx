@@ -5,25 +5,6 @@ import ShippingModal from "./ShippingModal";
 const Pricing = ({ shipping, tractors, users }) => {
     const [delivery, setDelivery] = useState(users[0].shipping.toString());
 
-    const handleUpdateUser = async (user) => {
-        try {
-          const response = await fetch(`http://localhost:3000/users/${user.id}`, {
-            method: 'PATCH',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(user),
-          });
-      
-          if (!response.ok) {
-            console.error('Failed to update user:', response.statusText);
-          }
-          console.log('User updated successfully');
-        } catch (error) {
-          console.error('Error updating user:', error.message);
-        }
-      };
-
   return (
     <div className="bg-white rounded-xl text-right p-3 border border-grey max-h-96 overflow-hidden">
       <p className="text-sm text-gray-500">Buy now or make offer</p>
@@ -43,7 +24,7 @@ const Pricing = ({ shipping, tractors, users }) => {
         <span className="text-xs text-left text-gray-600">
           Anywhere in your country
         </span>
-        <ShippingModal shipping={shipping} delivery={delivery} onSetDelivery={setDelivery} onUpdateUser={handleUpdateUser} users={users}/>
+        <ShippingModal shipping={shipping} delivery={delivery} onSetDelivery={setDelivery} users={users}/>
       </div>
       <div className="text-left bg-gray-100 mx-[-0.75rem] pb-10">
         <p className="text-sm font-semibold pb-2 px-3 pt-2">

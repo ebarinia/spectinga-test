@@ -12,13 +12,20 @@ import {
   RadioGroup,
   Stack,
 } from "@chakra-ui/react";
+import Request from "../Helpers/request";
 
-function ShippingModal({ users, shipping, delivery, onSetDelivery, onUpdateUser }) {
+function ShippingModal({ users, shipping, delivery, onSetDelivery }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const request = new Request();
+
+  console.log(delivery)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdateUser(users[0], delivery)
+    const url = `http://localhost:3000/users/${users[0].id}`;
+    const payload = { delivery: delivery === "true" };
+
+    request.patch(url, payload)
       .then(() => {})
       .catch((error) => {
         console.error("Error updating user:", error);
@@ -72,7 +79,7 @@ function ShippingModal({ users, shipping, delivery, onSetDelivery, onUpdateUser 
           <button
               className="bg-[#ffb46e] hover:bg-[#ffc38b] font-bold py-2 px-4 rounded mt-3 block w-full mx-auto"
               mr={3}
-              onClick={onClose}
+              onClick={handleSubmit}
             >
               Update
             </button>
