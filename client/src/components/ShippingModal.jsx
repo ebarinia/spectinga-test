@@ -23,10 +23,9 @@ function ShippingModal({ users, shipping, delivery, onSetDelivery }) {
     const url = `http://localhost:3000/users/${users[0].id}`;
     const payload = { shipping: delivery === "true" };
 
-    request.patch(url, payload)
-      .then(() => {
-        onClose();
-      })
+    request.patch(url, payload).then(() => {
+      onClose();
+    });
   };
 
   return (
@@ -44,8 +43,14 @@ function ShippingModal({ users, shipping, delivery, onSetDelivery }) {
           <ModalHeader>Select transport mode</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <p className="text-sm pb-6">Our team will get in touch to arrange after the purchase is completed.</p>
-            <p className="text-sm pb-6">Price includes transport, export documentation, customs, and cleaning.</p>
+            <p className="text-sm pb-6">
+              Our team will get in touch to arrange after the purchase is
+              completed.
+            </p>
+            <p className="text-sm pb-6">
+              Price includes transport, export documentation, customs, and
+              cleaning.
+            </p>
             <RadioGroup
               className=" pb-2"
               onChange={onSetDelivery}
@@ -73,7 +78,7 @@ function ShippingModal({ users, shipping, delivery, onSetDelivery }) {
           </ModalBody>
 
           <ModalFooter>
-          <button
+            <button
               className="bg-[#ffb46e] hover:bg-[#ffc38b] font-bold py-2 px-4 rounded mt-3 block w-full mx-auto"
               mr={3}
               onClick={handleSubmit}

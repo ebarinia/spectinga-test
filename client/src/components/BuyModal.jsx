@@ -17,7 +17,8 @@ import {
 function BuyModal({ tractors, shipping, delivery, onSetDelivery }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const totalCost = delivery === "true"
+  const totalCost =
+    delivery === "true"
       ? tractors[0].price + shipping[0].shipping
       : tractors[0].price;
 

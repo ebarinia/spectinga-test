@@ -12,7 +12,8 @@ function App() {
     </>
   ) : (
     <>
-      <div className="bg-[#2c42ec] h-80">
+      {/* <div className="bg-[#2c42ec] h-80"> */}
+        <div className="bg-gradient-to-b from-[#2c42ec] to-[#0019d0] h-80">
           <Header users={users} />
         <div
           className="ml-[27%] mr-[27%] pt-10 grid grid-cols-2 gap-10 pb-10"

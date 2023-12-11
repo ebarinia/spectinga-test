@@ -26,12 +26,12 @@ const Pricing = ({ shipping, tractors, users }) => {
         {users[0].shipping ? (
           <>
             <span className="font-semibold">Delivery to your yard</span>
-            <span>£{shipping[0].shipping}</span>
+            <span className="font-semibold">£{shipping[0].shipping}</span>
           </>
         ) : (
           <>
             <span className="font-semibold">Own transportation</span>
-            <span>£0</span>
+            <span className="font-semibold">£0</span>
           </>
         )}
       </div>
