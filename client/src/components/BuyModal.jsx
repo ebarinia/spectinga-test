@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Modal,
   ModalOverlay,
@@ -14,11 +14,10 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-function BuyModal({ tractors, shipping, users }) {
+function BuyModal({ tractors, shipping, delivery, onSetDelivery }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [value, setValue] = useState(users[0].shipping.toString());
 
-  const totalCost = value === "true"
+  const totalCost = delivery === "true"
       ? tractors[0].price + shipping[0].shipping
       : tractors[0].price;
 
@@ -49,8 +48,8 @@ function BuyModal({ tractors, shipping, users }) {
               <p className="text-gray-500 text-sm px-5 py-2">Transport mode</p>
               <RadioGroup
                 className="px-5 pb-2"
-                onChange={setValue}
-                value={value}
+                onChange={onSetDelivery}
+                value={delivery}
               >
                 <Stack>
                   <Radio value="true" colorScheme="blue">
