@@ -3,7 +3,7 @@ import BuyModal from "./BuyModal";
 import ShippingModal from "./ShippingModal";
 
 const Pricing = ({ shipping, tractors, users }) => {
-    const [delivery, setDelivery] = useState(users[0].shipping.toString());
+  const [delivery, setDelivery] = useState(users[0].shipping.toString());
 
   return (
     <div className="bg-white rounded-xl text-right p-3 border border-grey max-h-96 overflow-hidden">
@@ -15,16 +15,36 @@ const Pricing = ({ shipping, tractors, users }) => {
       <button className="bg-[#2c42ec] hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5 block w-full mx-auto">
         Contact sales
       </button>
-      <BuyModal tractors={tractors} shipping={shipping} users={users} delivery={delivery} onSetDelivery={setDelivery}/>
+      <BuyModal
+        tractors={tractors}
+        shipping={shipping}
+        users={users}
+        delivery={delivery}
+        onSetDelivery={setDelivery}
+      />
       <div className="flex justify-between text-sm mt-5">
-        <span className="font-semibold">Delivery to your yard</span>
-        <span>£{shipping[0].shipping}</span>
+        {users[0].shipping ? (
+          <>
+            <span className="font-semibold">Delivery to your yard</span>
+            <span>£{shipping[0].shipping}</span>
+          </>
+        ) : (
+          <>
+            <span className="font-semibold">Own transportation</span>
+            <span>£0</span>
+          </>
+        )}
       </div>
       <div className="flex justify-between text-sm mt-1 pb-5">
         <span className="text-xs text-left text-gray-600">
           Anywhere in your country
         </span>
-        <ShippingModal shipping={shipping} delivery={delivery} onSetDelivery={setDelivery} users={users}/>
+        <ShippingModal
+          shipping={shipping}
+          delivery={delivery}
+          onSetDelivery={setDelivery}
+          users={users}
+        />
       </div>
       <div className="text-left bg-gray-100 mx-[-0.75rem] pb-10">
         <p className="text-sm font-semibold pb-2 px-3 pt-2">

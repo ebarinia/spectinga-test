@@ -18,18 +18,15 @@ function ShippingModal({ users, shipping, delivery, onSetDelivery }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const request = new Request();
 
-  console.log(delivery)
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = `http://localhost:3000/users/${users[0].id}`;
     const payload = { shipping: delivery === "true" };
 
     request.patch(url, payload)
-      .then(() => {})
-      .catch((error) => {
-        console.error("Error updating user:", error);
-      });
+      .then(() => {
+        onClose();
+      })
   };
 
   return (
