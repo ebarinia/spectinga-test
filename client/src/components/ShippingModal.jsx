@@ -17,7 +17,7 @@ function ShippingModal() {
 
     return (
       <>
-        <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 cursor-pointer" onClick={onOpen}>Change</a>
+        <a className="text-xs text-blue-600 hover:text-blue-800 visited:text-purple-600 cursor-pointer" onClick={onOpen}>Change</a>
   
         <Modal isOpen={isOpen} onClose={onClose} isCentered>
           <ModalOverlay />
