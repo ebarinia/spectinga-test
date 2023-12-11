@@ -13,8 +13,17 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-function ShippingModal({ delivery, onSetDelivery, shipping }) {
+function ShippingModal({ users, shipping, delivery, onSetDelivery, onUpdateUser }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onUpdateUser(users[0], delivery)
+      .then(() => {})
+      .catch((error) => {
+        console.error("Error updating user:", error);
+      });
+  };
 
   return (
     <>
