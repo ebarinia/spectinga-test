@@ -25,7 +25,9 @@ const Pricing = ({ shipping, tractors, users }) => {
         <ShippingModal shipping={shipping} />
       </div>
       <div className="text-left bg-gray-100 mx-[-0.75rem] pb-10">
-        <p className="text-sm font-semibold pb-2 px-3 pt-2">Inspection Guarantee</p>
+        <p className="text-sm font-semibold pb-2 px-3 pt-2">
+          Inspection Guarantee
+        </p>
         <p className="text-xs text-gray-500 px-3">
           We carry out detailed inspection pre payment free of charge. You can
           cancel your bid if you are not happy with the inspection.
